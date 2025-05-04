@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import { Firestore, doc} from '@angular/fire/firestore';
+import { MatCardModule } from '@angular/material/card';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-detail',
@@ -8,5 +11,17 @@ import {MatCardModule} from '@angular/material/card';
   styleUrl: './user-detail.component.scss'
 })
 export class UserDetailComponent {
+  userId:string | null = '';
+  user$: Observable<any> | null = null;
 
+  constructor(private route: ActivatedRoute, private firestore: Firestore) {
+    this.route.paramMap.subscribe(routePath => {
+      this.userId = routePath.get('id');
+      console.log(doc(this.firestore, `user/${this.userId}`)) 
+    })
+  }
+
+  async ngOnInit(){
+
+  }
 }

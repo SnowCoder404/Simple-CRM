@@ -1,6 +1,8 @@
-mat-card {
+.profile-detail-header {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 12px;
     min-height: 250px;
     background-color: blue;
     >img {
@@ -8,4 +10,18 @@ mat-card {
         width: 100px;
         border-radius: 100%;
     }
+    >div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        height: 100px;
+        color: white;
+        >h2 {
+            margin: 0;
+        }
+    }
+}
+
+.mt-32 {
+    margin-top: 32px;
 }
