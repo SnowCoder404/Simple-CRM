@@ -3,3 +3,44 @@
     right: 56px;
     bottom: 56px;
 }
+
+table {
+    border-collapse: collapse;
+    tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);   
+        &:first-child {
+            cursor: unset;
+            &:hover {
+                cursor: unset;
+                background-color: unset;
+            }
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+        &:hover {
+            cursor: pointer; 
+            background-color: rgba(0, 0, 0, 0.04);   
+        }
+
+        th {
+            color: rgba(0, 0, 0, 0.5);
+            text-align: start;
+            &:first-child {
+                padding-left: 18px;
+            }
+        }
+    
+        td {
+            height: 48px;
+            &:first-child {
+                padding-left: 18px;
+            }
+        }
+    }
+}
+
+mat-card {
+    padding-left: 0;
+    padding-right: 0;
+}
