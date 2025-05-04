@@ -42,3 +42,7 @@ testem.log
 Thumbs.db
 
 push.sh
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

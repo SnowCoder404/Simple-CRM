@@ -18,7 +18,9 @@ export class UserComponent {
     const dialogRef = this.dialog.open(DialogAddUserComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      if (result) {
+        console.log(`Dialog result: ${result}`);
+      }
     });
   }
 }
