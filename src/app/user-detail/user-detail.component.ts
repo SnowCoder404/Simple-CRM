@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Firestore, doc} from '@angular/fire/firestore';
+import { Firestore, doc, collection} from '@angular/fire/firestore';
 import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -15,13 +15,16 @@ export class UserDetailComponent {
   user$: Observable<any> | null = null;
 
   constructor(private route: ActivatedRoute, private firestore: Firestore) {
-    this.route.paramMap.subscribe(routePath => {
-      this.userId = routePath.get('id');
-      console.log(doc(this.firestore, `user/${this.userId}`)) 
-    })
+
   }
 
-  async ngOnInit(){
-
+  ngOnInit(){
+    this.route.paramMap.subscribe(routePath => {
+      this.userId = routePath.get('id');
+      if (this.userId) {
+        let test = doc(collection(this.firestore, 'user'), this.userId);
+        console.log(test);
+      }  
+    })
   }
 }
