@@ -4,9 +4,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { User } from '../models/user.class';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
+import { FirebaseServices } from '../services/firebase.services.ts.service';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -19,14 +19,11 @@ export class DialogAddUserComponent {
   bithDate: any;
   loading = false;
 
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: FirebaseServices) {}
 
-  async saveUser() {
+  saveUser() {
     this.loading = true;
     this.user.bithDate = this.bithDate.getTime(); 
-    let collectionData = collection(this.firestore, 'users')
-    await addDoc(collectionData, this.user.toJson()).then(() => {
-      this.loading = false;
-    });
+    this.firestore.addUserData(this.user.toJson(), this.loading);
   }
 }

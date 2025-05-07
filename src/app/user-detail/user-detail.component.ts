@@ -1,29 +1,28 @@
 import { Component } from '@angular/core';
-import { Firestore, doc, collection} from '@angular/fire/firestore';
+import { FirebaseServices } from '../services/firebase.services.ts.service';
 import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { User } from '../models/user.class';
 
 @Component({
   selector: 'app-user-detail',
-  imports: [MatCardModule],
+  imports: [MatCardModule, CommonModule],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
 })
 export class UserDetailComponent {
   userId:string | null = '';
-  user$: Observable<any> | null = null;
+  user: User = new User();
 
-  constructor(private route: ActivatedRoute, private firestore: Firestore) {
-
-  }
-
-  ngOnInit(){
+  constructor(private route: ActivatedRoute, private firestore: FirebaseServices) {
     this.route.paramMap.subscribe(routePath => {
       this.userId = routePath.get('id');
       if (this.userId) {
-        let test = doc(collection(this.firestore, 'user'), this.userId);
-        console.log(test);
+        this.firestore.moreDetail(this.userId, (user) => {
+          this.user = user;
+        });
       }  
     })
   }

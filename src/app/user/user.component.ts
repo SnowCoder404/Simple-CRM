@@ -6,9 +6,9 @@ import {MatDialog} from '@angular/material/dialog'
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 import {MatCardModule} from '@angular/material/card';
 import { Observable } from 'rxjs';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore'
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FirebaseServices } from '../services/firebase.services.ts.service';
 
 @Component({
   selector: 'app-user',
@@ -19,17 +19,12 @@ import { RouterLink } from '@angular/router';
 export class UserComponent {
   items$: Observable<any[]>;
   
-  constructor(public dialog: MatDialog, private firestore: Firestore) {
-    let users = collection(this.firestore, "users");
-    this.items$ = collectionData(users,{ idField: 'id' });
-    this.items$.forEach((item) => {
-      console.log(item);
-    })
+  constructor(public dialog: MatDialog, private firestore: FirebaseServices) {
+    this.items$ = this.firestore.getColRef();
   }
 
   addUser() {
     const dialogRef = this.dialog.open(DialogAddUserComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log(`Dialog result: ${result}`);
