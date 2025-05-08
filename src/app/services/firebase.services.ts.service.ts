@@ -29,7 +29,7 @@ export class FirebaseServices {
   moreDetail(docId: any, callback: (data: any) => void ) {
     onSnapshot(doc(this.firestore, 'users',docId), (snapshot) => {
       if (snapshot.exists()) {
-        callback({ id: snapshot.id, ...snapshot.data() });
+        callback(snapshot.data());
       } 
     })
   }
