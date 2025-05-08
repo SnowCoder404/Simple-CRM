@@ -3,9 +3,12 @@ import { FirebaseServices } from '../services/firebase.services.ts.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { User } from '../models/user.class';
+import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
+import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -17,18 +20,22 @@ export class UserDetailComponent {
   userId:string | null = '';
   user: User = new User();
 
-  constructor(private route: ActivatedRoute, private firestore: FirebaseServices) {
+  constructor(private route: ActivatedRoute, private firestore: FirebaseServices, private dialog: MatDialog) {
     this.route.paramMap.subscribe(routePath => {
       this.userId = routePath.get('id');
       if (this.userId) {
         this.firestore.moreDetail(this.userId, (user) => {
-          this.user = user;
+          this.user = new User(user);
         });
       }  
     })
   }
 
-  editUserData() {}
+  editUserData() {
+    this.dialog.open(DialogEditUserComponent);
+  }
 
-  editAddressData() {}
+  editAddressData() {
+    this.dialog.open(DialogEditAddressComponent);
+  }
 }

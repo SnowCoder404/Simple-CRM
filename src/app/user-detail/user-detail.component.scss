@@ -4,7 +4,7 @@
     align-items: flex-end;
     gap: 18px;
     min-height: 250px;
-    background-color: blue;
+    background-color: rgba(63, 81, 181, 1);
     >img {
         height: 100px;
         width: 100px;
@@ -30,12 +30,19 @@
 
 .mat-icon-button {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 6px;
+    right: 6px;
     border-radius: 100%;
+    background-color: transparent;
+    border: 0;
     cursor: pointer;
 }
 
 .bold {
     font-weight: bold;
+}
+
+.address-detail {
+    background-color: rgba(63, 81, 181, 1);
+    color: white;
 }
