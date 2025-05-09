@@ -9,10 +9,11 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FirebaseServices } from '../services/firebase.services';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-user',
-  imports: [MatIconModule, MatButtonModule, MatTooltipModule, MatCardModule, CommonModule, RouterLink],
+  imports: [MatIconModule, MatButtonModule, MatTooltipModule, MatCardModule, MatCheckboxModule, CommonModule, RouterLink],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })

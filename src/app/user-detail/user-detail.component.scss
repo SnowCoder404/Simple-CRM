@@ -4,7 +4,7 @@
     align-items: flex-end;
     gap: 18px;
     min-height: 140px;
-    background-color: rgba(63, 81, 181, 1);
+    background-color: rgb(0, 0, 255);
     >img {
         height: 100px;
         width: 100px;
@@ -43,7 +43,6 @@
 }
 
 .address-detail, .job-info {
-    background-color: rgba(63, 81, 181, 1);
-    color: white;
+    color: var(--text-color-table);
     height: 100px;
 }

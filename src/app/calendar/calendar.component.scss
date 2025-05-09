@@ -1,5 +1,6 @@
 full-calendar {
     height: 630px;
+    width: 826px;
 }
 
 .priority {
@@ -9,4 +10,16 @@ full-calendar {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.main-container {
+   display: flex; 
+   align-items: center;
+   flex-direction: column; 
+   >div {
+        display: flex;  
+        justify-content: space-evenly; 
+        margin-top: 12px;
+        width: 100%;
+   }
 }

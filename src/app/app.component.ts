@@ -12,4 +12,17 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class AppComponent {
   title = 'simple-crm';
+  isDark: boolean;
+
+  constructor() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+      this.isDark = false;
+    } else {
+      this.isDark = true;
+    }
+  }
+
+  toggleDarkMode() {
+    this.isDark = !this.isDark;
+  }
 }
