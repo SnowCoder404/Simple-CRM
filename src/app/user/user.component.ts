@@ -8,7 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { FirebaseServices } from '../services/firebase.services.ts.service';
+import { FirebaseServices } from '../services/firebase.services';
 
 @Component({
   selector: 'app-user',

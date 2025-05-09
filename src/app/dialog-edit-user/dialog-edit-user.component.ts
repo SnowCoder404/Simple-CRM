@@ -14,11 +14,12 @@ import { CommonModule } from '@angular/common';
 })
 export class DialogEditUserComponent {
   user:any = {};
-  bithDate: any;
   userId:string | null = '';
   loading = false;
 
-  constructor(private firestore: FirebaseServices) {}
+  constructor(private firestore: FirebaseServices) {
+    console.log(this.user.bithDate)
+  }
 
   updateUser() {
     this.loading = true;

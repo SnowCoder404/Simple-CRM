@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: flex-end;
     gap: 18px;
-    min-height: 250px;
+    min-height: 140px;
     background-color: rgba(63, 81, 181, 1);
     >img {
         height: 100px;
@@ -42,7 +42,8 @@
     font-weight: bold;
 }
 
-.address-detail {
+.address-detail, .job-info {
     background-color: rgba(63, 81, 181, 1);
     color: white;
+    height: 100px;
 }
