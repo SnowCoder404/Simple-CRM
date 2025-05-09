@@ -9,11 +9,10 @@ import { CommonModule } from '@angular/common';
 import { User } from '../models/user.class';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
-import { CalendarComponent } from '../calendar/calendar.component';
 
 @Component({
   selector: 'app-user-detail',
-  imports: [MatCardModule, MatIconModule, MatMenuModule, CommonModule, CalendarComponent],
+  imports: [MatCardModule, MatIconModule, MatMenuModule, CommonModule],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
 })

@@ -1,9 +1,12 @@
-div {
-    display: flex;
-    justify-content: center;
+full-calendar {
+    height: 630px;
 }
 
-full-calendar {
-    width: 611150px;
-    height: 330px;
+.priority {
+    height: 22px;      
+    width: 85px; 
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

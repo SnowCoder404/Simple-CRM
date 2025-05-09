@@ -12,8 +12,8 @@ export class CalendarComponent {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
     events: [
-      { title: 'Termin 1', date: '2025-05-10' },
-      { title: 'Meeting', date: '2025-05-11' }
+      { title: 'Feedback', date: '2025-05-10', color: 'green' },
+      { title: 'Meeting', date: '2025-05-11', color: 'red' }
     ]
   };
 }
