@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, Firestore, addDoc, onSnapshot, doc } from '@angular/fire/firestore';
+import { collection, collectionData, Firestore, addDoc, onSnapshot, doc, updateDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +32,11 @@ export class FirebaseServices {
         callback(snapshot.data());
       } 
     })
+  }
+
+  async updateDetail(docId:string | null, jsonData: {}, callback: () => void) {
+    await updateDoc(this.getSingleDocRef(docId), jsonData).then(() => {
+      callback();
+    });
   }
 }
