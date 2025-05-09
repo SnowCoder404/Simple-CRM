@@ -6,7 +6,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { User } from '../models/user.class';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
-import { FirebaseServices } from '../services/firebase.services.ts.service';
+import { FirebaseServices } from '../services/firebase.services';
 
 @Component({
   selector: 'app-dialog-add-user',

@@ -4,7 +4,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { User } from '../models/user.class';
-import { FirebaseServices } from '../services/firebase.services.ts.service';
+import { FirebaseServices } from '../services/firebase.services';
 import { CommonModule } from '@angular/common';
 
 @Component({

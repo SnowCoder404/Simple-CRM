@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FirebaseServices } from '../services/firebase.services.ts.service';
+import { FirebaseServices } from '../services/firebase.services';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
