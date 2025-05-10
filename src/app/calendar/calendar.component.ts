@@ -31,17 +31,20 @@ export class CalendarComponent {
   constructor(private dialog: MatDialog, private firestore: FirebaseServices) {
     this.items$ = this.firestore.getColRef("events");
     this.items$.forEach((events: any) => {
-      events.forEach((event: any) => {
+      events.forEach((event: any) => {   
         delete event.id;
-        event.start = event.start.toDate().toISOString();
+        event.start = this.convertDate(event.start);
         event.allDay = true;  
         this.events.push(event)
         const calendarApi = this.fullCalendar.getApi();
         calendarApi.removeAllEvents(); 
         calendarApi.addEventSource(this.events);
-        console.log(this.events)
       })
     });
+  }
+
+  convertDate(date: any) {
+    return date.toDate().toISOString();
   }
 
   addEvent(date: any) {

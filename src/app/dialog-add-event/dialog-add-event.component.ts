@@ -35,6 +35,7 @@ export class DialogAddEventComponent {
   saveEvent() {
     this.colorLoop();
     let event = new Event(this.event);
+    console.log(event.toJson())
     this.firestore.addEvent(event.toJson(), this.loading);
   }
 

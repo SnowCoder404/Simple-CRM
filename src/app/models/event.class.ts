@@ -14,7 +14,7 @@ export class Event {
         return {
             title: this.title,
             start: this.start,
-            bgColor: this.backgroundColor,
+            backgroundColor: this.backgroundColor,
             borderColor: "transparent"
         }
     }
