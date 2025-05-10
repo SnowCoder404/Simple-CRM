@@ -1,0 +1,17 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<h2 mat-dialog-title>Add event</h2>
+<mat-dialog-content class="mat-typography">
+    <mat-form-field class="full-width">
+        <mat-label>Event title</mat-label>
+        <input [disabled]="loading" [(ngModel)]="event.title" matInput placeholder="Event name">
+    </mat-form-field>
+    <div class="priority-container">
+      <div (click)="setActive('low')" [ngClass]="{'active': activePriority === 'low'}">Low</div>
+      <div (click)="setActive('medium')" [ngClass]="{'active': activePriority === 'medium'}">Medium</div>
+      <div (click)="setActive('high')" [ngClass]="{'active': activePriority === 'high'}">High</div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button [mat-dialog-close]="false">Cancel</button>
+  <button mat-button (click)="saveEvent();" [mat-dialog-close]="true">Save</button>
+</mat-dialog-actions>

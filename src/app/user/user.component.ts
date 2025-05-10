@@ -21,15 +21,10 @@ export class UserComponent {
   items$: Observable<any[]>;
   
   constructor(public dialog: MatDialog, private firestore: FirebaseServices) {
-    this.items$ = this.firestore.getColRef();
+    this.items$ = this.firestore.getColRef("users");
   }
 
   addUser() {
-    const dialogRef = this.dialog.open(DialogAddUserComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log(`Dialog result: ${result}`);
-      }
-    });
+    this.dialog.open(DialogAddUserComponent);
   }
 }

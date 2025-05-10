@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { collection, collectionData, Firestore, addDoc, onSnapshot, doc, updateDoc } from '@angular/fire/firestore';
+import { Event } from '../models/event.class';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,12 @@ export class FirebaseServices {
 
   constructor(private firestore: Firestore) {}
 
-  getDocRef() {
-    return collection(this.firestore, "users");
+  getDocRef(doc: string) {
+    return collection(this.firestore, doc);
   }
 
-  getColRef() {
-    return collectionData(this.getDocRef(),{ idField: 'id' });
+  getColRef(col: string) {
+    return collectionData(this.getDocRef(col),{ idField: 'id' });
   }
 
   getSingleDocRef(docId: any) {
@@ -21,7 +22,13 @@ export class FirebaseServices {
   }
 
   async addUserData(userData: any, loading: boolean) {
-    await addDoc(this.getDocRef(),userData).then(() => {
+    await addDoc(this.getDocRef("users"),userData).then(() => {
+      loading = false;
+    });
+  }
+
+  async addEvent(event: any, loading: boolean) {
+    await addDoc(this.getDocRef("events"),event).then(() => {
       loading = false;
     });
   }
