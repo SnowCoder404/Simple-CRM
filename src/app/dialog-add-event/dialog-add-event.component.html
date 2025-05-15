@@ -5,6 +5,16 @@
         <mat-label>Event title</mat-label>
         <input [disabled]="loading" [(ngModel)]="event.title" matInput placeholder="Event name">
     </mat-form-field>
+    <div class="time-from-event">
+      <mat-form-field>
+          <mat-label>From</mat-label>
+          <input id="start-time" [disabled]="loading" [(ngModel)]="event.from" matInput type="time">
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>To</mat-label>
+          <input id="end-time" [disabled]="loading" [(ngModel)]="event.to" matInput type="time">
+      </mat-form-field>
+    </div>
     <div class="priority-container">
       <div (click)="setActive('low')" [ngClass]="{'active': activePriority === 'low'}">Low</div>
       <div (click)="setActive('medium')" [ngClass]="{'active': activePriority === 'medium'}">Medium</div>

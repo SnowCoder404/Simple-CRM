@@ -21,7 +21,6 @@ export class DialogAddEventComponent {
 
   constructor(private firestore: FirebaseServices) {}
 
-
   colorLoop() {
     if (document.querySelector(".active")?.innerHTML === "Low") {
       this.event.backgroundColor = "green";
@@ -35,7 +34,6 @@ export class DialogAddEventComponent {
   saveEvent() {
     this.colorLoop();
     let event = new Event(this.event);
-    console.log(event.toJson())
     this.firestore.addEvent(event.toJson(), this.loading);
   }
 

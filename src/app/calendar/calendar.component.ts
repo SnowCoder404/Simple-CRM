@@ -34,7 +34,6 @@ export class CalendarComponent {
       events.forEach((event: any) => {   
         delete event.id;
         event.start = this.convertDate(event.start);
-        event.allDay = true;  
         this.events.push(event)
         const calendarApi = this.fullCalendar.getApi();
         calendarApi.removeAllEvents(); 

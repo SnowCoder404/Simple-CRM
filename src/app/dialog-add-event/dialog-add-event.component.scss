@@ -21,6 +21,11 @@
     }
 }
 
+.time-from-event {
+    display: flex;
+    gap: 12px;
+}
+
 .active {
     filter: brightness(1.5);
 }

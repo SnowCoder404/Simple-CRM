@@ -10,7 +10,9 @@
       <li></li>
     </ul>
     <ul style="display: flex; justify-content: center;">
-      <li (click)="toggleDarkMode();">{{isDark ? 'Lightmode': 'Darkmode'}}</li>
+      <li (click)="toggleDarkMode();" [class]="!isDark ? 'dark-mode-toogle': 'light-mode-toogle'">
+        <img src="./assets/img/{{isDark ? 'sun.png': 'moon.png'}}" alt="">
+      </li>
     </ul>
   </mat-drawer>
 
