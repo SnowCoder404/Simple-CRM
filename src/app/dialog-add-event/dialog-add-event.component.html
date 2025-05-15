@@ -8,17 +8,12 @@
     <div class="time-from-event">
       <mat-form-field>
           <mat-label>From</mat-label>
-          <input id="start-time" [disabled]="loading" [(ngModel)]="event.from" matInput type="time">
+          <input id="start-time" [disabled]="loading" [(ngModel)]="startTime" matInput type="time">
       </mat-form-field>
       <mat-form-field>
           <mat-label>To</mat-label>
-          <input id="end-time" [disabled]="loading" [(ngModel)]="event.to" matInput type="time">
+          <input id="end-time" [disabled]="loading" [(ngModel)]="event.end" matInput type="time">
       </mat-form-field>
-    </div>
-    <div class="priority-container">
-      <div (click)="setActive('low')" [ngClass]="{'active': activePriority === 'low'}">Low</div>
-      <div (click)="setActive('medium')" [ngClass]="{'active': activePriority === 'medium'}">Medium</div>
-      <div (click)="setActive('high')" [ngClass]="{'active': activePriority === 'high'}">High</div>
     </div>
 </mat-dialog-content>
 <mat-dialog-actions class="dialog-actions">

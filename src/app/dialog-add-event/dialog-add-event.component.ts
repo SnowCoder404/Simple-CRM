@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -15,24 +15,18 @@ import { FirebaseServices } from '../services/firebase.services';
   styleUrl: './dialog-add-event.component.scss'
 })
 export class DialogAddEventComponent {
+  @Input() startTime: string = '';
   event: any = {}
   loading = false;
   activePriority: string = ''; 
 
   constructor(private firestore: FirebaseServices) {}
 
-  colorLoop() {
-    if (document.querySelector(".active")?.innerHTML === "Low") {
-      this.event.backgroundColor = "green";
-    } else if (document.querySelector(".active")?.innerHTML === "Medium") {
-      this.event.backgroundColor = "orange"; 
-    } else {
-      this.event.backgroundColor = "red";
-    }
-  }
 
   saveEvent() {
-    this.colorLoop();
+    const startDate = new Date(this.event.start);
+    startDate.setHours(Number(this.startTime.split(":")[0]), Number(this.startTime.split(":")[1]));
+    this.event.start = startDate;
     let event = new Event(this.event);
     this.firestore.addEvent(event.toJson(), this.loading);
   }
