@@ -15,6 +15,11 @@
           <input id="end-time" [disabled]="loading" [(ngModel)]="event.end" matInput type="time">
       </mat-form-field>
     </div>
+    <div class="type-of-event">
+      <div [class.active]="activePriority === 'green'" (click)="setActive('green')"></div>
+      <div [class.active]="activePriority === 'orange'" (click)="setActive('orange')"></div>
+      <div [class.active]="activePriority === 'red'" (click)="setActive('red')"></div>
+    </div>
 </mat-dialog-content>
 <mat-dialog-actions class="dialog-actions">
   <button mat-button [mat-dialog-close]="false">Cancel</button>

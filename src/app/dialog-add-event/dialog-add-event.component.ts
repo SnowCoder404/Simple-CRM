@@ -18,7 +18,7 @@ export class DialogAddEventComponent {
   @Input() startTime: string = '';
   event: any = {}
   loading = false;
-  activePriority: string = ''; 
+  activePriority: string = 'green'; 
 
   constructor(private firestore: FirebaseServices) {}
 
@@ -27,9 +27,11 @@ export class DialogAddEventComponent {
     const startDate = new Date(this.event.start);
     startDate.setHours(Number(this.startTime.split(":")[0]), Number(this.startTime.split(":")[1]));
     this.event.start = startDate;
+    this.event.backgroundColor = this.activePriority;
     let event = new Event(this.event);
     this.firestore.addEvent(event.toJson(), this.loading);
   }
+
 
   setActive(priority: string) {
     this.activePriority = priority;
