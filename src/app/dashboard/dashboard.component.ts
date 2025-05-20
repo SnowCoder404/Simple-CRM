@@ -1,10 +1,28 @@
 import { Component } from '@angular/core';
+import { FirebaseServices } from '../services/firebase.services';
+import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { Timestamp } from '@angular/fire/firestore';
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
-
+  items$: Observable<any[]>;
+  events: any = [];
+  
+  constructor(private firestore: FirebaseServices){
+    let currentDate = new Date().toDateString();
+    this.items$ = this.firestore.getColRef("events");
+    this.items$.forEach((events) => {
+      events.forEach((event) => {
+        let eventDate = new Date(event.start.toDate().toISOString()).toDateString();
+        if (eventDate === currentDate) {
+          this.events.push(event);
+        }
+      })
+    })
+  }
 }
