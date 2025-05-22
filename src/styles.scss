@@ -16,14 +16,21 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .full-width {
-    width: 100%;
+  width: 100%;
 }
 
 .mr-16 {
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 .dialog-actions {
-    justify-content: space-evenly;   
+  justify-content: space-evenly;   
 }
 
+@mixin dFlex($jc:center, $ai: center, $g: none, $fd: none) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+  flex-direction: $fd;
+}

@@ -5,8 +5,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { Event } from '../models/event.class';
-import { FirebaseServices } from '../services/firebase.services';
+import { Event } from '../../models/event.class';
+import { FirebaseServices } from '../../services/firebase.services';
 
 @Component({
   selector: 'app-dialog-add-event',

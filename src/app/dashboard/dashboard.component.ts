@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FirebaseServices } from '../services/firebase.services';
-import { Observable } from 'rxjs';
+import { min, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Timestamp } from '@angular/fire/firestore';
 @Component({
@@ -24,5 +24,12 @@ export class DashboardComponent {
         }
       })
     })
+  }
+
+  extractHour(date: any) {
+    date = new Date(date * 1000);
+    let hours = date.getHours().toString().padStart(2, '0');;
+    let minutes =  date.getMinutes().toString().padStart(2, '0');; 
+    return hours + ':' + minutes
   }
 }

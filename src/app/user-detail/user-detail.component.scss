@@ -1,8 +1,7 @@
+@import "../../styles.scss";
+
 .profile-detail-header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 18px;
+    @include dFlex($jc: none, $ai: flex-end , $fd: row, $g: 18px);
     min-height: 140px;
     background-color: rgb(0, 0, 255);
     >img {
@@ -13,9 +12,7 @@
         margin-bottom: 18px;
     }
     >div {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
+        @include dFlex($jc: none, $ai: none , $fd: column, $g: 2px);
         height: 100px;
         color: white;
         >h2 {

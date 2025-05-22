@@ -1,10 +1,10 @@
+@import "../../styles.scss";
+
 full-calendar {
     height: 630px;
     width: 826px;
 }
 
 .main-container {
-   display: flex; 
-   align-items: center;
-   flex-direction: column; 
+    @include dFlex($jc: none, $fd: column);
 }

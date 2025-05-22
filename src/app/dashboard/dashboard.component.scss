@@ -1,4 +1,22 @@
-div {
-    display: flex;
-    flex-direction: column;
+@import "../../styles.scss";
+
+.main-container {
+    @include dFlex($jc: center, $fd: column);
+    div {
+        @include dFlex($jc: none, $ai: none, $g: 32px);
+        table {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 0 14px;
+            >tr {
+                @include dFlex($jc: none, $ai: flex-end, $g: 64px);
+                >td {
+                    width: 64px;
+                    &:last-child {
+                        @include dFlex($ai: none);
+                    }
+                }
+            }
+        }
+    }
 }

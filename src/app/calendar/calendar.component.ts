@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogAddEventComponent } from '../dialog-add-event/dialog-add-event.component';
+import { DialogAddEventComponent } from '../dialogs/dialog-add-event/dialog-add-event.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';

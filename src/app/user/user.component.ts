@@ -3,7 +3,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialog} from '@angular/material/dialog'
-import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
+import { DialogAddUserComponent } from '../dialogs/dialog-add-user/dialog-add-user.component';
 import {MatCardModule} from '@angular/material/card';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';

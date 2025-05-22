@@ -7,8 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { User } from '../models/user.class';
-import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
-import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from '../dialogs/dialog-edit-user/dialog-edit-user.component';
+import { DialogEditAddressComponent } from '../dialogs/dialog-edit-address/dialog-edit-address.component';
 
 @Component({
   selector: 'app-user-detail',

@@ -1,12 +1,11 @@
+@import "../../../styles.scss";
+
 .time-from-event {
-    display: flex;
-    gap: 12px;
+    @include dFlex($jc: none, $ai: none, $g: 12px);
 }
 
 .type-of-event {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
+    @include dFlex($ai: none, $g: 12px);
     >div {
         width: 32px;
         height: 24px;

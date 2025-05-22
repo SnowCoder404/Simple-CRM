@@ -1,6 +1,19 @@
-<div *ngFor="let event of events">
-    <h2>Task today</h2>
-    <h3>Title: {{event.title}}</h3>
-    <h3>From: </h3>
-    <h3>To: </h3>
+<div class="main-container">
+    <h1>Today's events: </h1>
+    <div>
+        <table *ngFor="let event of events">
+            <tr>
+                <td><h3>Title: </h3></td>
+                <td><h3>{{event.title}}</h3></td>
+            </tr>
+            <tr>
+                <td><h3>From: </h3></td>
+                <td><h3>{{extractHour(event.start)}}</h3></td>
+            </tr>
+            <tr>
+                <td><h3>To:</h3></td>
+                <td><h3>{{event.end}}</h3></td>
+            </tr>
+        </table>
+    </div>
 </div>
