@@ -8,7 +8,8 @@ table {
     color: var(--text-color-table);
     border-collapse: collapse;
     tr {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.4);   
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4); 
+          
         &:first-child {
             cursor: unset;
             &:hover {
@@ -20,7 +21,7 @@ table {
         &:last-child {
             border-bottom: 0;
         }
-        
+
         &:hover {
             cursor: pointer; 
             background-color: rgba(0, 0, 0, 0.04);   
