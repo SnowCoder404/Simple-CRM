@@ -1,7 +1,5 @@
 # Simple CRM
 
-![](https://raw.githubusercontent.com/SnowCoder404/Portfolio/refs/heads/main/public/assets/img/screenshots/simple-crm.png)
-
 Simple CRM is a lightweight customer relationship management application built with Angular. It helps small teams and freelancers efficiently manage contacts, interactions, and tasks through a clean and responsive interface.
 
 
@@ -17,6 +15,11 @@ Simple CRM allows users to add, edit, and organize customer data, track communic
   - Task and interaction tracking
   - Responsive design for all devices
   - Modular architecture with Angular services and components
+
+## 📸 Screenshots
+
+![](https://raw.githubusercontent.com/SnowCoder404/Portfolio/refs/heads/main/public/assets/img/screenshots/simple-crm.png)
+
 
 ## 💬 Feedback & Support
 
