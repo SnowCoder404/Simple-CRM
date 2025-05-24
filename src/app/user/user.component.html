@@ -1,9 +1,8 @@
 <mat-card class="search-container">
     <input matInput placeholder="Search" (input)="searchUser($event)">
-
-  <mat-checkbox (change)="sortUser($event.checked, 'city');">Sort by name (A–Z)</mat-checkbox>
-  <mat-checkbox (change)="sortUser($event.checked, 'email');">Sort by email (A-Z)</mat-checkbox>
-  <mat-checkbox (change)="sortUser($event.checked, 'lastName');">Sort by city (A–Z)</mat-checkbox>
+    <mat-checkbox (change)="sortUser($event.checked, 'city');">Sort by name (A–Z)</mat-checkbox>
+    <mat-checkbox (change)="sortUser($event.checked, 'email');">Sort by email (A-Z)</mat-checkbox>
+    <mat-checkbox (change)="sortUser($event.checked, 'lastName');">Sort by city (A–Z)</mat-checkbox>
 </mat-card>
 <mat-card>
     <table>
