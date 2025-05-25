@@ -8,6 +8,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { FirebaseServices } from '../services/firebase.services';
 import { Observable } from 'rxjs';
 import { FullCalendarServices } from '../services/full-calendar.services';
+import { DialogEditEventComponent } from '../dialogs/dialog-edit-event/dialog-edit-event.component';
 
 @Component({
   selector: 'app-calendar',
@@ -26,6 +27,9 @@ export class CalendarComponent {
     events: this.events,
     dateClick: (info: any) => {
       this.addEvent(info);
+    },
+    eventClick: (info: any) => {
+      this.editEvent(info.event)
     }
   };
 
@@ -45,5 +49,14 @@ export class CalendarComponent {
   addEvent(date: any) {
     const dialog = this.dialog.open(DialogAddEventComponent);
     dialog.componentInstance.event.start = date.date;
+  }
+
+  editEvent(currentEvent: any) {
+    this.events.forEach((event: any) => {
+      if (currentEvent.title === event.title) {
+        const dialog = this.dialog.open(DialogEditEventComponent);
+        dialog.componentInstance.event = event;
+      }
+    })
   }
 }

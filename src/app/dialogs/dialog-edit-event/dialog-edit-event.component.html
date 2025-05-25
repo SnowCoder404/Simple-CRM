@@ -1,0 +1,28 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<h2 mat-dialog-title>Edit event</h2>
+<mat-dialog-content class="mat-typography">
+    <mat-form-field class="full-width">
+        <mat-label>Title</mat-label>
+        <input [disabled]="loading" [(ngModel)]="event.title" matInput placeholder="Title">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>Choose a date</mat-label>
+        <input [(ngModel)]="event.start" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div class="from-to-container">
+        <mat-form-field>
+            <mat-label>From</mat-label>
+            <input [disabled]="loading"  matInput placeholder="From">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>To</mat-label>
+            <input [disabled]="loading" [(ngModel)]="event.end" matInput placeholder="To">
+        </mat-form-field>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button [mat-dialog-close]="false">Cancel</button>
+  <button mat-button (click)="updateEvent();" [mat-dialog-close]="true">Save</button>
+</mat-dialog-actions>
