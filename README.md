@@ -9,8 +9,8 @@ Simple CRM allows users to add, edit, and organize customer data, track communic
 
 ## 🔧 Development
 
-<div>
- - <strong>Technologies:</strong>
+<strong>Technologies:</strong>
+<div style="display: flex;">
    <img src="https://skillicons.dev/icons?i=angular" height="30" style="margin-left: 6px; margin-right: 6px;" alt="Angular" />
    <img src="https://skillicons.dev/icons?i=ts" height="30" style="margin-right: 6px;" alt="TypeScript" />
    <img src="https://skillicons.dev/icons?i=sass" height="30" style="margin-right: 6px;" alt="Sass" />
