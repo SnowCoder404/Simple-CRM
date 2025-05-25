@@ -9,7 +9,17 @@ Simple CRM allows users to add, edit, and organize customer data, track communic
 
 ## 🔧 Development
 
-- **Technologies:** Angular, TypeScript, SCSS
+<div>
+ - <strong>Technologies:</strong>
+   <img src="https://skillicons.dev/icons?i=angular" height="30" style="margin-left: 6px; margin-right: 6px;" alt="Angular" />
+   <img src="https://skillicons.dev/icons?i=ts" height="30" style="margin-right: 6px;" alt="TypeScript" />
+   <img src="https://skillicons.dev/icons?i=sass" height="30" style="margin-right: 6px;" alt="Sass" />
+   <img src="https://skillicons.dev/icons?i=html" height="30" style="margin-right: 6px;" alt="HTML5" />
+   <img src="https://skillicons.dev/icons?i=firebase" height="30" alt="Firebase" />
+</div>
+
+
+
 - **Key Features:**
   - Manage customer records: create, update, delete
   - Task and interaction tracking
