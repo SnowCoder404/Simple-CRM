@@ -7,6 +7,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { FirebaseServices } from '../services/firebase.services';
 import { Observable } from 'rxjs';
+import { FullCalendarServices } from '../services/full-calendar.services';
 
 @Component({
   selector: 'app-calendar',
@@ -28,16 +29,11 @@ export class CalendarComponent {
     }
   };
 
-  constructor(private dialog: MatDialog, private firestore: FirebaseServices) {
+  constructor(private dialog: MatDialog, private firestore: FirebaseServices, private fullCalendarService: FullCalendarServices) {
     this.items$ = this.firestore.getColRef("events");
     this.items$.forEach((events: any) => {
       events.forEach((event: any) => {   
-        delete event.id;
-        event.start = this.convertDate(event.start);
-        this.events.push(event)
-        const calendarApi = this.fullCalendar.getApi();
-        calendarApi.removeAllEvents(); 
-        calendarApi.addEventSource(this.events);
+        this.fullCalendarService.formatEvent(event, this.events, this.fullCalendar);
       })
     });
   }

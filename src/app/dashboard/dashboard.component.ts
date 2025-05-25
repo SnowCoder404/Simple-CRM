@@ -19,10 +19,10 @@ export class DashboardComponent {
   
   calendarOptions = {
     plugins: [listPlugin],
-    initialView: 'listDay',
+    initialView: 'listWeek',
     events: this.events,
-    dateClick: (info: any) => {
-  
+    eventClick: (info: any) => {
+      console.log(info.event.title);
     }
   };
   
@@ -30,12 +30,7 @@ export class DashboardComponent {
     this.items$ = this.firestore.getColRef("events");
     this.items$.forEach((events: any) => {
       events.forEach((event: any) => {   
-        delete event.id;
-        event.start = this.fullCalendarService.convertDate(event.start);
-        this.events.push(event)
-        const calendarApi = this.fullCalendar.getApi();
-        calendarApi.removeAllEvents(); 
-        calendarApi.addEventSource(this.events);
+        this.fullCalendarService.formatEvent(event, this.events, this.fullCalendar);
       })
     });
   }
